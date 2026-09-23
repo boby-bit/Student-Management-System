@@ -1,0 +1,38 @@
+import student_logic_file
+
+def display_menu():
+    print("\n=== Student Management System ===")
+    print("1. Add a Student")
+    print("2. View All Students")
+    print("3. Update a Student")
+    print("4. Delete a Student")
+    print("5. Exit")
+    return input("Choose an option (1-5): ")
+
+def main():
+    while True:
+        choice = display_menu()
+        
+        if choice == '1':
+            # This now calls the function we just wrote!
+            student_logic_file.add_student()
+            
+        elif choice == '2':
+            # This calls the viewing function
+            student_logic_file.view_students()
+            
+        elif choice == '3':
+            student_logic_file.update_student()
+            
+        elif choice == '4':
+            student_logic_file.delete_student()
+            
+        elif choice == '5':
+            print("Exiting system. Goodbye!")
+            break
+            
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
